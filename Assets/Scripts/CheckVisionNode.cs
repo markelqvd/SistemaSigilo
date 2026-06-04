@@ -20,6 +20,15 @@ public class CheckVisionNode : BTNode
             if (blackboard.playerTransform != null)
             {
                 blackboard.targetPosition = blackboard.playerTransform.position;
+
+                float distanciaAlPlayer = Vector3.Distance(vision.transform.position, blackboard.playerTransform.position);
+                if (distanciaAlPlayer < 1.0f)
+                {
+                    if (GameMode.Instance != null)
+                    {
+                        GameMode.Instance.PlayerCapturado();
+                    }
+                }
             }
 
             state = NodeState.SUCCESS;

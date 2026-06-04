@@ -9,8 +9,6 @@ public class GridManager : MonoBehaviour
     public Vector2 gridWorldSize;
     public float nodeRadius;
 
-    public Transform pruebaInicio;
-    public Transform pruebaFin;
     private Pathfinding pathfinding;
     private List<Node> caminoDebug = new List<Node>();
 
@@ -30,14 +28,6 @@ public class GridManager : MonoBehaviour
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
 
         CreateGrid();
-    }
-
-    void Update()
-    {
-        if (pruebaInicio != null && pruebaFin != null && pathfinding != null)
-        {
-            caminoDebug = pathfinding.FindPath(pruebaInicio.position, pruebaFin.position);
-        }
     }
 
     void CreateGrid()
@@ -103,11 +93,6 @@ public class GridManager : MonoBehaviour
         }
 
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
-
-        if (!Application.isPlaying && pruebaInicio != null && pruebaFin != null && pathfinding != null)
-        {
-            caminoDebug = pathfinding.FindPath(pruebaInicio.position, pruebaFin.position);
-        }
 
         if (grid != null)
         {

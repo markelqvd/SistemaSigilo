@@ -27,7 +27,7 @@ public class EnemyVision : MonoBehaviour
     {
         if (CanSeePlayer())
         {
-            Debug.Log("<color=red>¡TE VEO!</color> El jugador está al descubierto.");
+            Debug.Log("TE VEO");
         }
     }
 

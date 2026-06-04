@@ -29,7 +29,6 @@ public class MoveToTargetNode : BTNode
 
         if (pathfinding == null)
         {
-            Debug.LogError("¡ERROR! El objeto " + transform.name + " no tiene el script 'Pathfinding' colgado en el Inspector.");
             state = NodeState.FAILURE;
             return state;
         }

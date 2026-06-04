@@ -37,4 +37,15 @@ public class AlertManager : MonoBehaviour
             }
         }
     }
+
+    public void ResetearAlertasGlobales()
+    {
+        foreach (EnemyAI guardia in listaDeGuardias)
+        {
+            if (guardia != null)
+            {
+                guardia.OlvidarIntrusoYVolverAPatrulla();
+            }
+        }
+    }
 }
